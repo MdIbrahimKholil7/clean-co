@@ -3,7 +3,7 @@ import Navbar from './Shared/Navbar/Navbar';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App max-w-7xl mx-auto">
      <Navbar/>
     </div>
   );

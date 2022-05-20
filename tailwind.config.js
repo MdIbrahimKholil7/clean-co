@@ -1,12 +1,11 @@
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
-  theme: {
-    extend: {},
-  },
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
   daisyui: {
     themes: [
       {
-        mytheme: {
+        light: {
           "primary": "#176F6B",
           "secondary": "#FFC000",
           "accent": "#FFEDD5",
@@ -18,6 +17,7 @@ module.exports = {
           "error": "#FA5C5C",
         },
       },
+      "dark",
     ],
   },
   plugins: [require("daisyui")],

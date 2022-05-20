@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-
+import useAdmin from '../../hooks/useAdmin'
 const Navbar = ({ children }) => {
     /* const location=useLocation()
     console.log(location) */
     const [dark, setDark] = useState(false)
+    const [admin]=useAdmin()
     const handleDark = () => {
         setDark(!dark)
     }
@@ -26,7 +27,7 @@ const Navbar = ({ children }) => {
                     <div class="flex-1  text-3xl font-bold ">Clean Co</div>
                     <div class="flex-none lg:hidden">
                         <label for="my-drawer-3" class="btn btn-square btn-ghost">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                         </label>
                     </div>
 
@@ -40,6 +41,7 @@ const Navbar = ({ children }) => {
                                 >
                                     {element.name}</NavLink></li>)
                             }
+                            {admin && <li><NavLink className='rounded-lg ' to='/dashboard'>DashBoard</NavLink></li>}
                             <li>
                                 <div class="dropdown dropdown-hover dropdown-end p-0">
                                     <label tabIndex="0" class="btn btn-outline btn-primary rounded-lg ">Book Now</label>
